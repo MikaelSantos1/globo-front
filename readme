@@ -1,0 +1,54 @@
+##Tecnologias usadas
+
+-React
+-Shadcnui
+-React query
+-React hook form
+
+## Instalação e Execução
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/MikaelSantos1/globo-front.git
+
+   ```
+
+2. **Clone o repositório:**
+
+Copie o env.examplo e cole no seu arquivo env
+
+3. **Entre na pasta do projeto e instale as dependecias:**
+
+```bash
+  npm i
+
+```
+
+4. **Execute o projeto**
+
+```bash
+   npm run dev
+
+
+```
+
+5. **Acesse**
+
+acesse http://localhost:5173/
+
+Faça login com usuario adminstrador:
+email:admin@admin.com
+senha:123456
+
+## Duvidas/ Regras de negócio
+
+- Fiquei em duvida entre usar nextjs e react, optei por acabar usando react apenas, por ser um projeto menos e na ter tanto necessidade de SEO por exemplo.
+- Montar as telas sem nenhuma foto/video de filmes tambem foi dificil, por isso optei por uma uma imagem padrão nos card da home.
+
+## Melhorias
+
+- Cadastar membros do elenco e genero de filmes
+- Tela para cadastrar usuarios
+- Testes
+- Documentação
