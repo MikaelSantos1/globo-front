@@ -1,3 +1,4 @@
+import { signOut } from "@/utils/sign-out";
 import axios from "axios";
 
 export const api = axios.create({
@@ -24,10 +25,12 @@ api.interceptors.response.use(
     return response;
   },
   (error) => {
-    if (error.response && error.response.status === 401) {
-      localStorage.removeItem("authToken");
-
-      window.location.href = "/login";
+    if (
+      error.response &&
+      error.response.status === 401 &&
+      error.response?.data.message == "Unauthorized."
+    ) {
+      signOut();
     }
 
     return Promise.reject(error);

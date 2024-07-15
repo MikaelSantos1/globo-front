@@ -1,6 +1,7 @@
 
 
 import Home from '@/screens/Home'
+import { Movie } from '@/screens/Movie'
 import { RegisterMovie } from '@/screens/RegisterMovie'
 import SignInPage from '@/screens/SignIn'
 import { ProtectedRoutes } from '@/utils/ProtectedRoutes'
@@ -14,6 +15,7 @@ export function AppRoutes() {
                 <Route element={<ProtectedRoutes />} >
                     <Route path='/' element={<Home />} />
                     <Route path='/create' element={<RegisterMovie />} />
+                    <Route path='/movie/:movieId' element={<Movie />} />
                 </Route>
 
 

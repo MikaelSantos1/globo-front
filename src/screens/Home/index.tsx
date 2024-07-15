@@ -4,10 +4,12 @@ import { useMovies } from "@/hooks/useMovies";
 import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
+import { useNavigate, } from "react-router-dom";
 
 export default function Home() {
     const { user } = useAuth()
     const { data } = useMovies()
+    const navigate = useNavigate()
 
     return (
         <div className=" min-h-screen flex-col  ">
@@ -16,7 +18,7 @@ export default function Home() {
                 {
                     user.role === 'ADMIN' &&
                     <div className="flex w-full justify-end mt-8">
-                        <Button size="sm" className="h-12 gap-1" >
+                        <Button size="sm" className="h-12 gap-1" onClick={() => navigate('/create')} >
                             <PlusCircle className="h-3.5 w-3.5" />
                             <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
                                 Adcionar novo filme
