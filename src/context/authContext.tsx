@@ -1,3 +1,5 @@
+import { api } from '@/services/api';
+import axios from 'axios';
 import React, { createContext, useState, useEffect, ReactNode, FC, } from 'react';
 
 
@@ -49,12 +51,19 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
     };
     useEffect(() => {
         const token = localStorage.getItem('authToken')
-        const role = localStorage.getItem('userRole')
+        const getUserProfile = async () => {
+            const { data } = await api.get('/me')
 
-        setUser({
-            token,
-            role
-        })
+            setUser(prevState => ({
+                ...prevState,
+                id: data.user.id,
+                name: data.user.name,
+                role: data.user.role
+            }))
+        }
+        if (token) {
+            getUserProfile()
+        }
 
     }, []);
     return (

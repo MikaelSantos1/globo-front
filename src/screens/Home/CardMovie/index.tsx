@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import Icon from "@/assets/movie-videos-svgrepo-com.svg"
+import Icon from "@/assets/Red and Blue Movie Night Poster.png"
 import { MovieDTO } from "@/DTO/movieDTO";
 import { Badge } from "@/components/ui/badge";
 

@@ -1,16 +1,17 @@
-import { GenreDTO } from "@/DTO/genreDTO";
+import { castDTO } from "@/DTO/castDTO";
+
 
 import { api } from "@/services/api";
 import { useQuery, } from "@tanstack/react-query";
 
 async function fetcher() {
-    const response = await api.get('/genres')
+    const response = await api.get('/cast')
     return response.data
 }
 
-export function useGenres() {
-    return useQuery<GenreDTO[], Error>({
-        queryKey: ['useGenres'],
+export function useCast() {
+    return useQuery<castDTO[], Error>({
+        queryKey: ['useCast'],
         queryFn: fetcher,
         staleTime: 1000 * 60 * 10
     })
